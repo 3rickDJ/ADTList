@@ -1,3 +1,4 @@
+// incluir el header del template de una clase
 #include "../include/ADTQueue.h"
 #include <ostream>
 using std::cin;
