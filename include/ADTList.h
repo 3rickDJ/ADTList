@@ -6,16 +6,9 @@ using std::endl;
 
 template<typename T>
 class List {
+    protected:
     int LastElm;
     T lista[MAX];
-
-    public:
-    List(){
-        LastElm = 0;
-        cout << "List initialized!!" << endl;
-    }
-    bool isEmpty(){return LastElm == 0;}
-    bool isFull(){return LastElm ==MAX;}
     bool shiftRight(){
         if(isFull()){
             cout << "Error: full List" << endl;
@@ -39,6 +32,19 @@ class List {
             return false;
         }
     }
+    bool validIndex(int index){
+        if(index<LastElm && index>=0){
+            return true;
+        }
+        return false;
+    }
+
+    public:
+    List(){
+        LastElm = 0;
+    }
+    bool isEmpty(){return LastElm == 0;}
+    bool isFull(){return LastElm ==MAX;}
     void deleteElm(int position){
         if(shiftLeft(position)){ LastElm = LastElm - 1; }
     }
@@ -79,20 +85,27 @@ class List {
         }
         return lista[index];
     }
+    int find(T elm){
+        for (int i = 0; i<LastElm; i++){
+            if(elm == lista[i]){ return i;}
+        }
+        cout << "Item not found"<< endl;
+        return -1;
+    }
     T getNext(T elm){
-        cout << "Not implemented" << endl;
+        int index = find(elm) + 1;
+        if(validIndex(index)){
+            return lista[index];
+        }
         return 0;
     }
     T getPrev(T elm){
-        cout << "Not implemented" << endl;
-        return 0;
-    }
-    bool validIndex(int index){
-        if(index<LastElm && index>=0){
-            return true;
+        int index = find(elm) - 1 ;
+        if(validIndex(index)){
+            return lista[index];
         }
-        return false;
-    }
+        return 0;
+        }
     void printList(){
         if(!isEmpty()){
             cout << LastElm << " elements of list are:" <<endl;
