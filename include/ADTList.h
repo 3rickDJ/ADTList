@@ -48,6 +48,8 @@ class List {
     void deleteElm(int position){
         if(shiftLeft(position)){ LastElm = LastElm - 1; }
     }
+    void deleteEnd(){ deleteElm(LastElm - 1); }
+    void deleteStart(){deleteElm(0); }
     void insertEnd( T elm){
         if(isFull()){
             cout << "Error: full List" << endl;
@@ -97,7 +99,7 @@ class List {
         if(validIndex(index)){
             return lista[index];
         }
-        return 0;
+        return -1;
     }
     T getPrev(T elm){
         int index = find(elm) - 1 ;
