@@ -1,5 +1,6 @@
+// MENU PARA UTILIZAR LA LISTA, compilarlo con g++ -o main.exe src/main.cpp
 // incluir el header del template de una clase
-#include "../include/ADTStack.h"
+#include "../include/ADTList.h"
 #include <ostream>
 using std::cin;
 using std::cout;

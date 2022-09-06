@@ -1,12 +1,14 @@
+// MENU PARA UTILIZAR LA PILA, compilarlo con g++ -o main.exe src/main2.cpp
 // incluir el header del template de una clase
 #include "../include/ADTStack.h"
+//usando plantilla de clase pila
 #include <ostream>
 using std::cin;
 using std::cout;
 using std::endl;
 int main(){
     int opt,  subOpt, elm, index;
-    //declarar obgeto pila
+    //declarar objeto pila
     Stack<int> pila;
     do{
     cout << "================================================================================" <<endl;
@@ -47,6 +49,7 @@ int main(){
             cout << "Saliendo" << endl;
             break;
     }
+    //opcion de salida
     }while(opt!=5);
 
 }
