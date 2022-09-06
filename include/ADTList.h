@@ -5,6 +5,7 @@ using std::cout;
 using std::endl;
 
 template<typename T>
+
 class List {
     protected:
     int LastElm;
@@ -79,11 +80,11 @@ class List {
     T getElm(int index ){
         if(isEmpty()){
             cout << "Error: empty List" << endl;
-            throw "Error: empty List";
+            return -1;
         }
         if(!(validIndex(index))){
             cout << "Error: invalid index"<<endl;
-            throw "Error: invalid index ";
+            return -1;
         }
         return lista[index];
     }
